@@ -8,7 +8,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-// import MenuIcon from '@mui/icons-material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
@@ -39,7 +39,7 @@ export default function NavBar(props: Props) {
           <img src={fullgospellogo} className="h-6"  alt="fgbmfi logo" />
           
 
-      {/* <Divider /> */}
+      <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -65,7 +65,7 @@ export default function NavBar(props: Props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            {/* <MenuIcon /> */}
+            <MenuIcon />
             
 
           </IconButton>
@@ -76,8 +76,8 @@ export default function NavBar(props: Props) {
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button key={item} sx={{ color: '#fff', fontWeight:'600' }}>
+                {item} 
               </Button>
             ))}
           </Box>

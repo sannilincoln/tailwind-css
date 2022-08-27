@@ -1,6 +1,7 @@
 import React from 'react'
 import StackButtons from '../Components/common/StackButton'
 import NavBar from '../Components/Navbar'
+import PublicIcon from '@mui/icons-material/Public';
 
 const Home = () => {
   return (
@@ -14,7 +15,10 @@ const Home = () => {
           <StackButtons/>
     </div>
 
-      <div className="px-20 py-16">
+      <div className="px-20 py-16 " >
+        <div className="flex justify-center align-middle">
+            < PublicIcon fontSize='large' />
+        </div>
         <h1 className='text-center'>About Convention</h1>
         <p className='text-center'>
           We use a vast global movement of laymen comprising millions of men and women being used mightily by God to bring this last great harvest of souls through the outpourings of God’s Holy Spirit,
@@ -23,8 +27,8 @@ const Home = () => {
         </p>
       </div>
 
-     <div className="h-11 bg-teal-500 flex justify-center">
-        <p className='text-white text-center font-semibold'> FGBMFI Nigeria Conventions</p>
+     <div className="h-11 bg-fgbmfi flex justify-center">
+        <p className='text-white text-center '> {new Date().getFullYear()} - FGBMFI Nigeria Conventions</p>
      </div>
 
     </main>
