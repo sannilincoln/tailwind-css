@@ -13,11 +13,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import fullgospellogo from '../fullgospellogo.png'
+import { useNavigate } from 'react-router-dom';
 
 
 const theme = createTheme();
 
 export default function SignIn() {
+    const navigate = useNavigate();
+
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -41,7 +44,7 @@ export default function SignIn() {
           }}
         >
           
-            <img src={fullgospellogo}  alt="fgbmfi logo" />
+            <img src={fullgospellogo} className='h-20' alt="fgbmfi logo" />
           
           <Typography component="h1" variant="h5">
             Member Sign in
@@ -75,7 +78,8 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2,backgroundColor:'#00a99d'}}
+              sx={{ mt: 3, mb: 2,backgroundColor:'#00a99d','&:hover':{backgroundColor:'#00a99d'}}}
+              onClick={() =>navigate('/Profile')}
             >
               Sign In
             </Button>
@@ -86,7 +90,7 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2" className='text-fgbmfi'>
+                <Link href="/SignUp" variant="body2" className='text-fgbmfi'>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

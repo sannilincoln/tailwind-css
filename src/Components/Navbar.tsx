@@ -13,20 +13,28 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import fullgospellogo from '../fullgospellogo.png'
+import { Link, useNavigate } from "react-router-dom";
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
+
 
 const drawerWidth = 240;
-const navItems = ['CONTACT', 'FGBMFI-NIGERIA.ORG.NG', 'ADMIN LOGIN'];
+const navItems = [ {id:1,
+                    item:'CONTACT',
+                    link:'#'
+                  },
+                    {
+                    id:2,
+                    item:'FGBMFI-NIGERIA.ORG.NG',
+                    link:'https://fgbmfi-nigeria.org.ng/'
+                  },
+                    {
+                    id:3,
+                    item:'ADMIN LOGIN',
+                    link:'http://admin.fgbmficonventions.com/'
+                    }
+                  ]
 
-export default function NavBar(props: Props) {
-  const { window } = props;
+export default function NavBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -41,8 +49,8 @@ export default function NavBar(props: Props) {
 
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map(({item,id, link }) => (
+          <ListItem key={id} disablePadding>
             <ListItemButton sx={{ textAlign: 'center',backgroundColor:'#00a99d' }}>
               <ListItemText primary={item} />
             </ListItemButton>
@@ -52,11 +60,10 @@ export default function NavBar(props: Props) {
     </Box>
   );
 
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box sx={{ display: 'flex' }}>
-      <AppBar component="nav" sx={{backgroundColor:'#00a99d'}}>
+      <AppBar component="nav"  sx={{backgroundColor:'#00a99d'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -75,8 +82,8 @@ export default function NavBar(props: Props) {
           </div>
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff', fontWeight:'600' }}>
+            {navItems.map(({item,id,link}) => (
+              <Button key={id} onClick={() => {} } sx={{ color: '#fff', fontWeight:'600' }}>
                 {item} 
               </Button>
             ))}
@@ -85,7 +92,6 @@ export default function NavBar(props: Props) {
       </AppBar>
       <Box component="nav">
         <Drawer
-          container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

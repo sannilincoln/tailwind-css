@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import fullgospellogo from '../fullgospellogo.png'
+// import { Link } from "react-router-dom";
+
 
 
 
@@ -101,13 +103,13 @@ export default function SignUp() {
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2, backgroundColor:'#00a99d' }}
+              sx={{ mt: 3, mb: 2, backgroundColor:'#00a99d','&:hover':{backgroundColor:'#00a99d'} }}
             >
               Register
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2" className='text-fgbmfi'>
+                <Link href="/Login" variant="body2" className='text-fgbmfi'>
                   Already have an account? Sign in
                 </Link>
               </Grid>
