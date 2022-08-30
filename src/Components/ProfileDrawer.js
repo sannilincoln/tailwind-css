@@ -1,6 +1,8 @@
 import HomeIcon from '@mui/icons-material/Home';
 import PasswordIcon from '@mui/icons-material/Password';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import KeyIcon from '@mui/icons-material/Key';
+
 
 
 export const  SideList = [ 
@@ -12,7 +14,7 @@ export const  SideList = [
     },
     {
         id:1,
-        icon:<PasswordIcon />,
+        icon:<KeyIcon />,
         label:'Change Password',
         route:'#',
     },

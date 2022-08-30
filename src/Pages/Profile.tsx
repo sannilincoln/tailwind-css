@@ -14,7 +14,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Drawer from '@mui/material/Drawer';
 import { SideList } from '../Components/ProfileDrawer';
-
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -22,19 +21,30 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import Button from '@mui/material/Button';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+import fullgospellogo from '../fullgospellogo.png'
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 function DashboardContent() {
 
+      const navigate = useNavigate();
+
+    
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
+
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: '#2a3042',
     color: theme.palette.common.white,
+    fontWeight: '600',
+    
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 16,
   },
 }));
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -70,10 +80,16 @@ const rows = [
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
          <AppBar position="fixed" sx={{ backgroundColor:'White' }}>
-        <Toolbar>
-          <Typography variant="h5" align='right'  component="div" >
-            Clipped wgdsfrwdsfeds
+        <Toolbar sx={{flex:1, color:'#555'}}>
+          <Typography variant="h6" component="div" sx={{flex:1, textAlign:'right', color:'#555'}}>
+           email
           </Typography>
+           <Button variant="text" size="small" sx={{color:'#555',marginLeft:2}}                                   >
+          <LogoutIcon/>
+
+                                         </Button>
+
+         
         </Toolbar>
       </AppBar>
         <Drawer
@@ -81,16 +97,21 @@ const rows = [
         sx={{
           width: 240,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: 240, backgroundColor:'#555',  boxSizing: 'border-box' },
+          [`& .MuiDrawer-paper`]: { width: 240, backgroundColor:'#2a3042',  boxSizing: 'border-box' },
         }}
       >
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
-          <List className='text-white'>
+            <div className="flex  ml-3">
+            <img src={fullgospellogo} className='h-14' alt="fgbmfi logo" />
+            <h4 className='text-slate-200 ml-3'>FGBMFI</h4>
+
+            </div>
+          <List className='text-slate-200'>
             {SideList.map(({id,label,route,icon}) => (
               <ListItem key={id} disablePadding >
-                <ListItemButton>
-                  <ListItemIcon sx={{color:'#fff'}}>
+                <ListItemButton onClick={()=>navigate(route)}>
+                  <ListItemIcon sx={{color:'#c7c7c7'}}>
                    {icon}
                   </ListItemIcon>
                   <ListItemText primary={label} />
@@ -123,16 +144,16 @@ const rows = [
                     p: 2,
                     display: 'flex',
                     // flexDirection: 'column',
-                    height: 240,
+                    height: 200,
                   }}
                 >
-                   <div>
-                    <div></div>
-                    <h4>Name</h4>
-                    <div>
-                        <p>MemberShip rank</p>
-                        <p></p>
-                    </div>
+                   <div className='flex '>
+                    <div className='h-28 w-28 mt-4 border-2 rounded-full border-solid border-fgbmfi'></div>
+                                <div className='ml-12'>
+                                <h4>Name</h4>
+                                    <p>Name</p>
+                                    <p>Country</p>
+                                </div>
                    
                    </div>
                 </Paper>
@@ -160,7 +181,13 @@ const rows = [
                                         {row.name}
                                     </StyledTableCell>
                                     <StyledTableCell >{row.calories}</StyledTableCell>
-                                    <StyledTableCell >{row.fat}</StyledTableCell>
+                                    <StyledTableCell > 
+                                         <Button variant="contained" size="small"
+                                         sx={{backgroundColor:'#2a3042', '&:hover':{backgroundColor:'#2a3042'}}}
+                                         >
+                                                Register
+                                            </Button>
+                                            </StyledTableCell>
                                    
                                     </StyledTableRow>
                                 ))}

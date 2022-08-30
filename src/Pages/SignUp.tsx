@@ -12,6 +12,27 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import fullgospellogo from '../fullgospellogo.png'
 // import { Link } from "react-router-dom";
+import MenuItem from '@mui/material/MenuItem';
+import MuiDatePicker from '../Components/common/Datepicker';
+
+const currencies = [
+  {
+    value: 'USD',
+    label: '$',
+  },
+  {
+    value: 'EUR',
+    label: '€',
+  },
+  {
+    value: 'BTC',
+    label: '฿',
+  },
+  {
+    value: 'JPY',
+    label: '¥',
+  },
+];
 
 
 
@@ -32,7 +53,7 @@ export default function SignUp() {
 
   return (
     // <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="sm">
         <CssBaseline />
         <Box
           sx={{
@@ -52,11 +73,50 @@ export default function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  select
+                  fullWidth
+                  required
+                  name="Title"
+                  label="Title"
+                  // value={}
+                  //  onChange={}
+                  autoFocus
+                >
+                        {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+                </TextField>
+
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  select
+                  fullWidth
+                  required
+                  name="Gender"
+                  label="Gender"
+                  // value={}
+                  //  onChange={}
+                  autoFocus
+                >
+                        {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+                </TextField>
+
+              </Grid>
+              
+              <Grid item xs={12} sm={6}>
+                <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="FirstName"
                   required
                   fullWidth
-                  id="firstName"
+                  id="FirstName"
                   label="First Name"
                   autoFocus
                 />
@@ -65,10 +125,25 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
+                  id="LastName"
                   label="Last Name"
-                  name="lastName"
+                  name="LastName"
                   autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  required
+                  fullWidth
+                  id="number"
+                  label="WhatsApp Number"
+                  name="number"
+                  autoComplete="number"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <MuiDatePicker
+                Title={'Date of Birth'}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -81,23 +156,43 @@ export default function SignUp() {
                   autoComplete="email"
                 />
               </Grid>
-              {/* <Grid item xs={12}>
+              
+              <Grid item xs={12}>
                 <TextField
-                  required
+                  select
                   fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                />
-              </Grid> */}
-              {/* <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid> */}
+                  required
+                  name="Conutry"
+                  label="Conutry"
+                  // value={}
+                  //  onChange={}
+                  autoFocus
+                >
+                        {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+                </TextField>
+              </Grid>
+              <Grid item xs={12}>
+                 <TextField
+                  select
+                  fullWidth
+                  required
+                  name="State"
+                  label="State"
+                  // value={}
+                  //  onChange={}
+                  autoFocus
+                >
+                        {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+                </TextField>
+              </Grid>
             </Grid>
             <Button
               type="submit"
