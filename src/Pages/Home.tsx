@@ -13,12 +13,14 @@ const Home = () => {
     }}>
            <NavBar/>
             <h1 className='text-white text-center text-6xl'> Welcome To Full Gospel Business Men Conventions</h1>
-          <StackButtons/>
+          <StackButtons
+       
+          />
     </div>
 
       <div className="px-20 py-16 " >
         <div className="flex justify-center align-middle">
-            < PublicIcon fontSize='large' />
+            < PublicIcon fontSize='large'/>
         </div>
         <h1 className='text-center'>About Convention</h1>
         <p className='text-center'>
