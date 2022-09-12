@@ -18,7 +18,11 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const drawerWidth = 240;
-const navItems = [ {id:1,
+const navItems = [{id:1,
+                    item:'HOME',
+                    link:'/'
+                  },
+                   {id:1,
                     item:'CONTACT',
                     link:'#'
                   },
@@ -42,17 +46,17 @@ export default function NavBar() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} sx={{ flex:1, textAlign: 'center', backgroundColor:'#00a99d' }}>
        
-          <img src={fullgospellogo} className="h-6"  alt="fgbmfi logo" />
+          <img src={fullgospellogo} className='h-14' alt="fgbmfi logo" />
           
 
       <Divider />
-      <List>
+      <List >
         {navItems.map(({item,id, link }) => (
-          <ListItem key={id} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center',backgroundColor:'#00a99d' }}>
-              <ListItemText primary={item} />
+          <ListItem key={id} disablePadding >
+            <ListItemButton  sx={{ textAlign: 'center', }}>
+              <ListItemText primary={item} sx={{ color:'#fff', fontWeight:'600'}}/>
             </ListItemButton>
           </ListItem>
         ))}
@@ -83,7 +87,7 @@ export default function NavBar() {
 
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map(({item,id,link}) => (
-              <Button key={id} onClick={() => {} } sx={{ color: '#fff', fontWeight:'600' }}>
+              <Button key={id} onClick={() => window.open(link)} sx={{ color: '#fff',fontSize:15, fontWeight:'600', marginX:2 }}>
                 {item} 
               </Button>
             ))}

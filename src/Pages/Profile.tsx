@@ -182,10 +182,9 @@ const rows = [
                                     </StyledTableCell>
                                     <StyledTableCell >{row.calories}</StyledTableCell>
                                     <StyledTableCell > 
-                                         <Button variant="contained" size="small"
+                                         <Button variant="contained" size="small" onClick={()=> navigate('/event')}
                                          sx={{backgroundColor:'#2a3042', '&:hover':{backgroundColor:'#2a3042'}}}
-                                         >
-                                                Register
+                                         >Register
                                             </Button>
                                             </StyledTableCell>
                                    

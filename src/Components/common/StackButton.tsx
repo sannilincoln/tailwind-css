@@ -4,20 +4,15 @@ import {  useNavigate } from "react-router-dom";
 
 import Button from '@mui/material/Button';
 
-export default function StackButtons() {
-  const btnStyle ={
-    backgroundColor:'#00a99d', 
-    '&:hover':{backgroundColor:'#00a99d'},
-    fontWeight:'600'
-    
-  }
+export default function StackButtons({}) {
+ 
   
   const navigate = useNavigate();
   return (
-    <Stack spacing={6} direction="row"  justifyContent="center" alignItems="center">
-      <Button variant="contained" size='large' onClick={() => navigate('SignUp')} sx={btnStyle}>
+    <Stack spacing={4} direction="row"  justifyContent="center" alignItems="center">
+      <Button variant="contained" size='large' onClick={() => navigate('SignUp')} className='m-4 font-semibold bg-fgbmfi'>
           Guest Register </Button>
-      <Button variant="contained" size='large'  onClick={() => navigate('Login')} sx={btnStyle}>Member Login</Button>
+      <Button variant="contained" size='large'  onClick={() => navigate('Login')} className='m-4 font-semibold bg-fgbmfi'>Member Login</Button>
       
     </Stack>
   );

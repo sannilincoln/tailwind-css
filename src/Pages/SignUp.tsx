@@ -52,12 +52,14 @@ export default function SignUp() {
   };
 
   return (
-    // <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="sm">
+ <div className=" bg-cover bg-center bg-gradient-to-r from-rgba(0,0,0,0.7) to-rgba(0,0,0,0.7) flex flex-col align-middle justify-center " style={{
+      backgroundImage: `url("https://images.unsplash.com/photo-1502987846294-e7ec70f4b393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80")`,
+    }}> 
+      <Container  className='shadow-xl p-10 opacity-90 my-12 bg-slate-100 max-w-xl rounded'>
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -212,6 +214,8 @@ export default function SignUp() {
           </Box>
         </Box>
       </Container>
+    
+    </div>    
     // </ThemeProvider>
   );
 }

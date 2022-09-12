@@ -1,8 +1,6 @@
 
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -14,9 +12,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import fullgospellogo from '../fullgospellogo.png'
 import { useNavigate } from 'react-router-dom';
-
-
-const theme = createTheme();
 
 export default function SignIn() {
     const navigate = useNavigate();
@@ -32,15 +27,19 @@ export default function SignIn() {
   };
 
   return (
-    // <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
+      <div className="h-screen bg-cover bg-center bg-gradient-to-r from-rgba(0,0,0,0.7) to-rgba(0,0,0,0.7) flex flex-col align-middle justify-center " style={{
+      backgroundImage: `url("https://images.unsplash.com/photo-1502987846294-e7ec70f4b393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=773&q=80")`,
+    }}>
+
+      <Container  className='shadow-xl p-10 opacity-90 bg-slate-100 max-w-xl rounded'>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 0,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            
+           
           }}
         >
           
@@ -98,6 +97,10 @@ export default function SignIn() {
           </Box>
         </Box>
       </Container>
-    // </ThemeProvider>
+
+    </div>
+
+
+      
   );
 }
